@@ -1,5 +1,27 @@
-.App {
+body {
   text-align: center;
+  background-image: url(https://res.cloudinary.com/dz2jdgus7/image/upload/v1627863138/final%20project%20images/Untitled_design_4_myvlvt.png);
+
+}
+
+h1.form {
+  font-family: Lato;
+  color: #20322A;
+}
+
+#projectcard{
+  align-items: center;
+  justify-self: center;
+}
+
+img#logo{
+  width: 150px
+}
+
+div#titlebar {
+  display: flex;
+  justify-items: space-evenly;
+  align-items: center;
 }
 
 img.profile {

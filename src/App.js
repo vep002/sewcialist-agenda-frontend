@@ -6,6 +6,8 @@ import Profile from './components/Profile'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 import NavBar from './components/NavBar'
+import ProjectDetails from './components/ProjectDetails'
+import Browse from './components/Browse'
 import {useState, useEffect} from 'react';
 
 function App(props) {
@@ -130,6 +132,7 @@ function App(props) {
 
   // Delete project step 3: takes the deleted projectId sent from the backend as an argument. Creates a new copy of the projects array with the deleted project removed. sets the state of the current user with the new projects array.
   let deleteProject = (deletedId) => {
+    console.log("step 2")
     let copyOfProjects = currentUser.projects.filter((projectObj) => {
       return projectObj.id !== deletedId
     })
@@ -189,6 +192,61 @@ const addTask = (task) => {
     replaceProjectinState(copyOfProject)
   }
 
+  const updateProjectDescription = (responseFromBackend) => {
+    console.log(responseFromBackend)
+    let projectToUpdate = currentUser.projects.find(project => {
+      return project.id === responseFromBackend.id
+    })
+    let copyOfProject = {
+      ...projectToUpdate,
+      description: responseFromBackend.description,
+    }  
+    replaceProjectinState(copyOfProject)
+  }
+
+    const updateProjectStartDate = (responseFromBackend) => {
+      console.log(responseFromBackend)
+      let projectToUpdate = currentUser.projects.find(project => {
+        return project.id === responseFromBackend.id
+      })
+      let copyOfProject = {
+        ...projectToUpdate,
+        start_date: responseFromBackend.start_date,
+      }
+    
+      replaceProjectinState(copyOfProject)
+    }
+
+    const updateProjectEndDate = (responseFromBackend) => {
+      console.log(responseFromBackend)
+      let projectToUpdate = currentUser.projects.find(project => {
+        return project.id === responseFromBackend.id
+      })
+      let copyOfProject = {
+        ...projectToUpdate,
+ 
+        end_date: responseFromBackend.end_date,
+      }
+    
+      replaceProjectinState(copyOfProject)
+    }
+
+
+    const updateProjectFinished = (responseFromBackend) => {
+      console.log(responseFromBackend)
+      let projectToUpdate = currentUser.projects.find(project => {
+        return project.id === responseFromBackend.id
+      })
+      let copyOfProject = {
+        ...projectToUpdate,
+ 
+        finished: responseFromBackend.finished,
+      }
+    
+      replaceProjectinState(copyOfProject)
+    }
+
+
   let handleLogout = () => {
     localStorage.clear()
     setCurrentUser({
@@ -226,7 +284,8 @@ const addTask = (task) => {
     addMaterial={addMaterial}
     token={currentUser.token}
     handleLogout={handleLogout}
-    style={{
+    history={props.history}
+      style={{
       fontFamily: 'Lato'
     }}
     />
@@ -234,14 +293,32 @@ const addTask = (task) => {
 
 
 
+  const renderSingleProject = (routerprops) => {
+    let whatUserTyped = routerprops.match.params.id
+    let foundProject = currentUser.projects.find((project) => {
+      return project.id === parseInt(whatUserTyped)
+    })  
+    if(foundProject){
+      return <ProjectDetails addTask={addTask} addMaterial={addMaterial} project={foundProject} history={props.history} user={currentUser} updateProjectDescription={updateProjectDescription} updateProjectStartDate={updateProjectStartDate} updateProjectEndDate={updateProjectEndDate} updateProjectFinished={updateProjectFinished} deleteProject={deleteProject}/>
+    } else {
+      return <></>
+    }
+  }
+
+  const renderBrowse = (routerprops) => {
+    return <Browse history={props.history}/>
+  }
+ 
+
   return (
-    <div className="App" style={{backgroundImage: `url(https://res.cloudinary.com/dz2jdgus7/image/upload/v1627863138/final%20project%20images/Untitled_design_4_myvlvt.png)`
-    }}>
+    <div className="App">
       <NavBar/>
       <Switch>
         <Route path="/login" render={ renderForm }/>
         <Route path="/signup" render={ renderForm } />
         <Route path="/profile" render={ renderProfile } />
+        <Route path="/browse" render={ renderBrowse } />
+        <Route path = "/projects/:id/projectdetails" render={renderSingleProject}/>
         <Route path={'/'}>
           <Home 
           handleLoginSubmit={handleLoginSubmit}

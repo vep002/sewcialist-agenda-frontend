@@ -3,6 +3,7 @@ import ProjectContainer from './ProjectContainer'
 import NavBar from './NavBar'
 import Button from '@material-ui/core/Button'
 import {useState} from 'react';
+import Chart from './Chart'
 import {Switch, Route, withRouter} from 'react-router-dom'
 import { render } from '@testing-library/react';
 
@@ -48,26 +49,20 @@ import { render } from '@testing-library/react';
         props.handleProjectSubmit(formData)
     }
 
-    const handleClick = (e) => {
-        console.log(visible)
-        setVisible(!visible)
-        renderProjectContainer()
-       
+    let handleClick = () => {
+        props.history.push("/browse")
     }
 
-    const renderProjectContainer = () => {
-        console.log(visible)
-        if (visible===true) {
-            return 
-        }
-    }
+
 
     let handleLogOutClick = () => {props.handleLogout()}
 
     return (
         <div>
-                <Button value={visible} onClick={handleClick}>Your Projects</Button>
-                <Button>Get Inspired</Button>
+                <Button>Your Projects</Button>
+                <Button
+                onClick={handleClick}
+                >Get Inspired</Button>
                 <img class= "profile" src={props.user.profile_pic}/>
                 {/* new project step 1: user enters a new project, each input changes the state, and submitting the form runs the handleSubmit function */}
                 <form onSubmit={handleSubmit}>
@@ -87,14 +82,14 @@ import { render } from '@testing-library/react';
                 ></input>
                 <br/>
                 <label>Start Date</label>
-                <input type="text"
+                <input type="date"
                 name="start_date"
                 value={start_date}
                 onChange={handleStartDate}
                 ></input>
                 <br/>
                 <label>End Date</label>
-                <input type="text"
+                <input type="date"
                 name="end_date"
                 value={end_date}
                 onChange={handleEndDate}
@@ -102,9 +97,8 @@ import { render } from '@testing-library/react';
                 <br/>
                 <input type="submit" value="Submit"/>
             </form>
-            <h1>Placeholder for Gantt chart</h1>
-            <h1>Placeholder for progress charts</h1>
-            <ProjectContainer user={props.user} projects={props.projects} deleteProject={props.deleteProject} addTask={props.addTask} addMaterial={props.addMaterial} token={props.token}/>
+            <Chart user={props.user}/>
+            <ProjectContainer user={props.user} projects={props.projects} deleteProject={props.deleteProject} addTask={props.addTask} addMaterial={props.addMaterial} token={props.token} history={props.history} updateProject={props.updateProject}/>
             <button class='blue-button' onClick={handleLogOutClick}>Sign Out</button>
         </div>
     )

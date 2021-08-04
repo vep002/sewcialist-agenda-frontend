@@ -34,17 +34,17 @@ export default function Images(props) {
 
     return (
     <div class="slideshow-container fade">
-        <div class="mySlides">
-            <div class="numbertext">1 / 2</div>
+        {/* <div class="mySlides">
+            <div class="numbertext">1 / 2</div> */}
             <img src={props.project.mock_up}/>
-            <div class="text">Project Mock Up</div>
-        </div>
+            {/* <div class="text">Project Mock Up</div>
+        </div> */}
 
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 2</div>
+        {/* <div class="mySlides fade">
+            <div class="numbertext">2 / 2</div> */}
             <img src={props.project.finished}/>
-            <div class="text">Finsihed Project</div>
-        </div>
+            {/* <div class="text">Finsihed Project</div>
+        </div> */}
   
         {/* <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>

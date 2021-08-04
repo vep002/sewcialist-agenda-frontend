@@ -20,8 +20,8 @@ export default function AddMaterialForm(props) {
 
     let formData = {
         description: description,
-        price: price
-        // project_id: `${props.project_id}`
+        price: price,
+        project_id: `${props.project_id}`
     }
 
     props.handleMaterialSubmit(formData)
@@ -30,12 +30,12 @@ export default function AddMaterialForm(props) {
     return (
         <div>
              <form onSubmit={handleSubmit}> 
-              <h2>Add a Task</h2>    
+              <h2>Add a Material</h2>    
               <label>Description</label>
                 <input type="text"
                 name="description"
                 value= {description}
-                onchange= {handleDescription}
+                onChange= {handleDescription}
                 ></input>
                 <br/>
                 <label>Price</label>

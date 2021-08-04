@@ -31,10 +31,10 @@ const NavBar = () => {
             verticalAlign: 'baseline',
             fontFamily: 'Atomic Age',
             color: '#F2E7C9'
-            }}> The Sewcialist Agenda
-            <img src={`https://res.cloudinary.com/dz2jdgus7/image/upload/v1627866399/final%20project%20images/Untitled_design_5_armdu9.png`}
+            }}><div id="titlebar">The Sewcialist Agenda
+            <img src={`https://res.cloudinary.com/dz2jdgus7/image/upload/v1627923558/final%20project%20images/Untitled_design_6_mltc8y.png`} id="logo"
             style={{size: '10px'}}
-            />
+            /></div>
         <Toolbar> 
             <Link to={'/'}
                 style={{ textDecoration: 'none' }}>

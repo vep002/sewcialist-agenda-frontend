@@ -3,6 +3,7 @@ import {useState} from 'react'
 
 
 export default function AddTaskForm(props) {
+    console.log(props)
 
     const [description, setDescription] = useState("")
 
@@ -45,18 +46,18 @@ export default function AddTaskForm(props) {
                 <input type="text"
                 name="description"
                 value= {description}
-                onchange= {handleDescription}
+                onChange= {handleDescription}
                 ></input>
                 <br/>
                 <label>Start Date</label>
-                <input type="text"
+                <input type="date"
                 name="start_date"
                 value={start_date}
                 onChange={handleStartDate}
                 ></input>
                 <br/>
                 <label>End Date</label>
-                <input type="text"
+                <input type="date"
                 name="end_date"
                 value={end_date}
                 onChange={handleEndDate}
