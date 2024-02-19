@@ -10,7 +10,7 @@ export default function HorizontalBarChart(props){
        return(project.tasks)
    }).flat()
 
-console.log(projectTasks)
+// console.log(projectTasks)
    let projectTasksDescription = projectTasks.map(task=> {
            return(task.description)
    })
@@ -19,7 +19,7 @@ console.log(projectTasks)
     return(task.start_date)
    })
 
-   console.log(projectTasksStartDate)
+//  console.log(projectTasksStartDate)
 
    let start_dates = projectTasksStartDate.map(date=> {
        return new Date(date)
@@ -55,23 +55,23 @@ console.log(durationInDays)
     labels: projectTasksDescription,
     datasets: [
       {
-        label: 'Project Timeline',
+        label: 'Task Timeline',
         data: durationInDays,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
+          '#20322A',
+          '#20322A',
+          '#20322A',
+          '#20322A',
+          '#20322A',
+          '#20322A',
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
+          '#20322A',
+          '#20322A',
+          '#20322A',
+          '#20322A',
+          '#20322A',
+          '#20322A',
         ],
         borderWidth: 1,
       },
@@ -94,14 +94,14 @@ console.log(durationInDays)
       },
       title: {
         display: true,
-        text: 'Chart.js Horizontal Bar Chart',
+        text: '',
       },
     },
   };
 
  return (
     <div>
-      <h1 className='title'>Horizontal Bar Chart</h1>
+      <h1 className='title'>Projects Timeline</h1>
       
       <Bar data={data} options={options} />
     </div>

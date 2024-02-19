@@ -58,61 +58,37 @@ export default function SignUp(props) {
             <h1 className="form">{formName}</h1>
             <TextField
                 required
-                label="Required"
+                label="User name"
                 defaultValue="Username"
-                variant="outlined"
+                variant="filled"
                 type="text" 
                 id="username" 
                 name="username"
                 value={username}
                 onChange={handleUserNameChange}
                 />
-            {/* <label for="username">username:</label>
-            <input 
-            type="text" 
-            id="username" 
-            name="username"
-            value={username}
-            onChange={handleUserNameChange}
-            /> */}
             <TextField
                     label="Password"
                     type="password"
                     autoComplete="current-password"
-                    variant="outlined"
+                    variant="filled"
                     type="password" 
                     id="password" 
                     name="password"
                     value={password}
                     onChange={handlePasswordChange}
                     />
-            {/* <label for="password">password</label>
-            <input 
-            type="password" 
-            id="password" 
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-            /> */}
             <TextField
                 required
-                label="Required"
+                label="Profile picture"
                 defaultValue="ProfilePic"
-                variant="outlined"
+                variant="filled"
                 type="text" 
                 id="profile_pic" 
                 name="profile_pic"
                 value={profile_pic}
                 onChange={handleProfilePicChange}
                 />
-            {/* <label for="password">profile picture</label>
-            <input 
-            type="text" 
-            id="profile_pic" 
-            name="profile_pic"
-            value={profile_pic}
-            onChange={handleProfilePicChange}
-            /> */}
              <Button onClick={submitHandler}
                 className={classes.menuButton}
                 variant="contained"

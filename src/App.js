@@ -52,7 +52,7 @@ function App(props) {
     .then((res) => handleResponse(res))
   }
 
-  // SignUp step 3a: the handleSubmit prop passed down to Signup.js is the handleSignUpSubmit here. This function takes in the formData stored in Signup.js and runs a fetch POST request to the backend /users resource. The body of this POST is the formData. Finally, this request takes what it recieves from the backend and runs the handleSignUpResponse function. See backend code for the response sent from the backend.
+  // SIGNUP step 3a: the handleSubmit prop passed down to Signup.js is the handleSignUpSubmit here. This function takes in the formData stored in Signup.js and runs a fetch POST request to the backend /users resource. The body of this POST is the formData. Finally, this request takes what it recieves from the backend and runs the handleSignUpResponse function. See backend code for the response sent from the backend.
   const handleSignUpSubmit = (formData) => {
     console.log(formData)
 
@@ -256,6 +256,7 @@ const addTask = (task) => {
         token: "",
         projects: []
     })
+    props.history.push("/home")
   }
   
    

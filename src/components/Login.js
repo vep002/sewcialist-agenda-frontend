@@ -53,7 +53,7 @@ export default function Login(props) {
                 required
                 label="Required"
                 defaultValue="Username"
-                variant="outlined"
+                variant="filled"
                 type="text" 
                 id="username" 
                 name="username"
@@ -72,7 +72,7 @@ export default function Login(props) {
                     label="Password"
                     type="password"
                     autoComplete="current-password"
-                    variant="outlined"
+                    variant="filled"
                     type="password" 
                     id="password" 
                     name="password"
