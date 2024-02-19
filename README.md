@@ -1,70 +1,22 @@
 npm n# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## A project management and inspiration app for fiber artists
 
-## Available Scripts
+The Sewcialist Agenda allows users to create track and manage their creative projects. Users can add a new project, including a title and description, and a start and end date. Once created, users can view a project, add photo, add and change materials and tasks, and generally update the project based on ther needs. Creating a task adds it to the visual timeline at the top of the profile page, while changing the start and end dates of the project will automatically update the lenght of the bar associated with that task, showing how many days have been allocated for a specific task.
 
-In the project directory, you can run:
+![Sewcialist Agenda profile screen](https://github.com/vep002/vep002.github.io/blob/master/Screen%20Shot%202021-10-09%20at%2011.45.51%20AM.png)
 
-### `npm start`
+Backend repo: https://github.com/vep002/sewcialist-agenda-backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Live demo: https://res.cloudinary.com/dz2jdgus7/video/upload/v1633808303/sewcialist_agenda_demo_rjblql.mp4
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to run locally:
 
-### `npm test`
+- git clone the backend repo
+- run `bundle install` to install dependencies
+- run `rails s` to start the rails server
+- git clone this repository
+- run `npm install` to install dependencies
+- run `npm start` 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
